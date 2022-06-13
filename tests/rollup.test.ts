@@ -2,7 +2,7 @@
 import { resolve } from 'path'
 import { rollup } from 'rollup'
 import glob from 'fast-glob'
-import VueDefineOptions from '../src/rollup'
+import VueMacros from '../src/rollup'
 import type { Plugin } from 'rollup'
 
 const ToString: Plugin = {
@@ -43,7 +43,7 @@ describe('transform', () => {
         const filepath = resolve(root, file)
 
         const unpluginCode = await getCode(filepath, [
-          VueDefineOptions({}),
+          VueMacros({}),
           ToString,
         ]).catch((err) => err)
         expect(unpluginCode).toMatchSnapshot()

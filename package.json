@@ -1,5 +1,5 @@
 {
-  "name": "unplugin-vue-define-options",
+  "name": "unplugin-vue-macros",
   "version": "0.6.2",
   "packageManager": "pnpm@7.5.0",
   "description": "Add defineOptions support for Vue script-setup",
@@ -10,13 +10,13 @@
     "defineOptions"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/sxzz/unplugin-vue-define-options#readme",
+  "homepage": "https://github.com/sxzz/unplugin-vue-macros#readme",
   "bugs": {
-    "url": "https://github.com/sxzz/unplugin-vue-define-options/issues"
+    "url": "https://github.com/sxzz/unplugin-vue-macros/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sxzz/unplugin-vue-define-options.git"
+    "url": "git+https://github.com/sxzz/unplugin-vue-macros.git"
   },
   "author": "三咲智子 <sxzz@sxzz.moe>",
   "files": [

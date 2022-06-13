@@ -1,6 +1,6 @@
 import { createUnplugin } from 'unplugin'
 import { createFilter } from '@rollup/pluginutils'
-import { transform } from './core/transform'
+import { transformDefineOptions } from './define-options/transform'
 import type { defineComponent } from 'vue'
 import type { FilterPattern } from '@rollup/pluginutils'
 
@@ -26,7 +26,7 @@ export default createUnplugin<Options>((options = {}) => {
   const opt = resolveOption(options)
   const filter = createFilter(opt.include, opt.exclude)
 
-  const name = 'unplugin-vue-define-options'
+  const name = 'unplugin-vue-macros'
   return {
     name,
     enforce: 'pre',
@@ -37,7 +37,7 @@ export default createUnplugin<Options>((options = {}) => {
 
     transform(code, id) {
       try {
-        return transform(code, id)
+        return transformDefineOptions(code, id)
       } catch (err: unknown) {
         this.error(`${name} ${err}`)
       }
@@ -45,4 +45,4 @@ export default createUnplugin<Options>((options = {}) => {
   }
 })
 
-export { transform }
+export { transformDefineOptions as transform }

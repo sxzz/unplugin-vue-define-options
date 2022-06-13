@@ -1,6 +1,6 @@
-# unplugin-vue-define-options [![npm](https://img.shields.io/npm/v/unplugin-vue-define-options.svg)](https://npmjs.com/package/unplugin-vue-define-options)
+# unplugin-vue-macros [![npm](https://img.shields.io/npm/v/unplugin-vue-macros.svg)](https://npmjs.com/package/unplugin-vue-macros)
 
-[![Unit Test](https://github.com/sxzz/unplugin-vue-define-options/actions/workflows/unit-test.yml/badge.svg)](https://github.com/sxzz/unplugin-vue-define-options/actions/workflows/unit-test.yml)
+[![Unit Test](https://github.com/sxzz/unplugin-vue-macros/actions/workflows/unit-test.yml/badge.svg)](https://github.com/sxzz/unplugin-vue-macros/actions/workflows/unit-test.yml)
 
 Introduce a macro in script setup, `defineOptions`, to use Options API in script setup, specifically to be able to set `name`, `props`, `emits` and `render` in one function.
 
@@ -85,7 +85,7 @@ export default {
 ## Installation
 
 ```bash
-npm i unplugin-vue-define-options -D
+npm i unplugin-vue-macros -D
 ```
 
 <details>
@@ -93,11 +93,11 @@ npm i unplugin-vue-define-options -D
 
 ```ts
 // vite.config.ts
-import DefineOptions from 'unplugin-vue-define-options/vite'
+import VueMacros from 'unplugin-vue-macros/vite'
 import Vue from '@vitejs/plugin-vue'
 
 export default defineConfig({
-  plugins: [Vue(), DefineOptions()],
+  plugins: [Vue(), VueMacros()],
 })
 ```
 
@@ -108,10 +108,10 @@ export default defineConfig({
 
 ```ts
 // rollup.config.js
-import DefineOptions from 'unplugin-vue-define-options/rollup'
+import VueMacros from 'unplugin-vue-macros/rollup'
 
 export default {
-  plugins: [DefineOptions()], // Must be before Vue plugin!
+  plugins: [VueMacros()], // Must be before Vue plugin!
 }
 ```
 
@@ -126,7 +126,7 @@ import { build } from 'esbuild'
 
 build({
   plugins: [
-    require('unplugin-vue-define-options/esbuild')(), // Must be before Vue plugin!
+    require('unplugin-vue-macros/esbuild')(), // Must be before Vue plugin!
   ],
 })
 ```
@@ -140,7 +140,7 @@ build({
 // webpack.config.js
 module.exports = {
   /* ... */
-  plugins: [require('unplugin-vue-define-options/webpack')()],
+  plugins: [require('unplugin-vue-macros/webpack')()],
 }
 ```
 
@@ -153,7 +153,7 @@ module.exports = {
 // vue.config.js
 module.exports = {
   configureWebpack: {
-    plugins: [require('unplugin-vue-define-options/webpack')()],
+    plugins: [require('unplugin-vue-macros/webpack')()],
   },
 }
 ```
@@ -167,7 +167,7 @@ module.exports = {
 {
   "compilerOptions": {
     // ...
-    "types": ["unplugin-vue-define-options" /* ... */]
+    "types": ["unplugin-vue-macros" /* ... */]
   }
 }
 ```
