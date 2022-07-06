@@ -16,7 +16,7 @@ Introduce a macro in script setup, `defineOptions`, to use Options API in script
 
 ## Usage
 
-### Basic example
+### `defineOptions`
 
 ```vue
 <script setup lang="ts">
@@ -55,7 +55,7 @@ const slots = useSlots()
 
 </details>
 
-### JSX in `script-setup`
+#### JSX in `script-setup`
 
 ```vue
 <script setup lang="tsx">
@@ -77,6 +77,32 @@ export default {
     return <h1>Hello World</h1>
   },
 }
+</script>
+```
+
+</details>
+
+### `defineModel`
+
+```vue
+<script setup lang="ts">
+defineModel<{
+  name: string
+}>()
+</script>
+```
+
+<details>
+<summary>Output</summary>
+
+```vue
+<script setup lang="ts">
+defineProps<{
+  name: string
+}>()
+defineEmits<{
+  (evt: 'update:name', value: string): void
+}>()
 </script>
 ```
 

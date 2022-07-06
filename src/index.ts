@@ -1,12 +1,7 @@
 import { createUnplugin } from 'unplugin'
 import { createFilter } from '@rollup/pluginutils'
 import { transformDefineOptions } from './define-options/transform'
-import type { defineComponent } from 'vue'
 import type { FilterPattern } from '@rollup/pluginutils'
-
-declare global {
-  const defineOptions: typeof defineComponent
-}
 
 export interface Options {
   include?: FilterPattern

@@ -7,6 +7,7 @@ import {
   parseSFC,
 } from './utils'
 import type { TransformResult } from 'unplugin'
+import type { defineComponent } from 'vue'
 
 export const transformDefineOptions = (
   code: string,
@@ -67,4 +68,8 @@ export const transformDefineOptions = (
       })
     },
   }
+}
+
+declare global {
+  const defineOptions: typeof defineComponent
 }

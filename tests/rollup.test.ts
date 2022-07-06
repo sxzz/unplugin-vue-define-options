@@ -33,7 +33,7 @@ async function getCode(file: string, plugins: Plugin[]) {
 describe('transform', () => {
   describe('fixtures', async () => {
     const root = resolve(__dirname, '..')
-    const files = await glob('tests/fixtures/*.{vue,js,ts}', {
+    const files = await glob('tests/fixtures/**/*.{vue,js,ts}', {
       cwd: root,
       onlyFiles: true,
     })
